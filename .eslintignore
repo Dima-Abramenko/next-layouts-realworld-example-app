@@ -1,0 +1,6 @@
+# Enable certain dot files and folders
+!.*.js
+
+# Build output folders
+.next
+build
