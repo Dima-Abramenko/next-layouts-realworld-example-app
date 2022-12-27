@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
+import type { FC } from "react";
 
-const Home: NextPage = () => {
+const Home: FC = () => {
   return (
     <main>
       <h1>Next.js Layouts RealWorld Example App</h1>
