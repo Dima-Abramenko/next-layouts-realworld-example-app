@@ -1,11 +1,9 @@
-import type { FC } from "react";
+import type { FC } from 'react';
 
-const Home: FC = () => {
-  return (
-    <main>
-      <h1>Next.js Layouts RealWorld Example App</h1>
-    </main>
-  )
-}
+const Home: FC = () => (
+  <main>
+    <h1>Next.js Layouts RealWorld Example App</h1>
+  </main>
+);
 
 export default Home;
