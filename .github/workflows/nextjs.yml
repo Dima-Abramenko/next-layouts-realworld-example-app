@@ -3,7 +3,6 @@ name: Validate Next.js app
 on:
   push:
     branches: ["master"]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -17,9 +16,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-          cache: "yarn"
-      - name: Install dependencies
-        run: "yarn"
+        run: yarn
+      - name: Restore Node and Next.js cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/node_modules
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - name: Build application
         run: yarn next build
       - name: Linting

@@ -118,6 +118,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'todo-plz/ticket-ref': ['error', { pattern: '[A-Z]+-[0-9]+' }],
+    '@next/next/no-html-link-for-pages': ['error', './app'],
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/member-ordering': ['error', { default: { order: 'alphabetically' } }],
