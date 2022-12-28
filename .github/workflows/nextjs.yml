@@ -12,12 +12,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install dependencies
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-        run: yarn
-      - name: Restore Node and Next.js cache
+      - name: Restore Node.js and Next.js caches
         uses: actions/cache@v3
         with:
           path: |
@@ -26,6 +21,12 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
+      - name: Set up Node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Install dependencies
+        run: yarn
       - name: Build application
         run: yarn next build
       - name: Linting
