@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { ReactElement } from 'react';
 import React from 'react';
 
+// TODO: Complete PlatformHeader component
 export const PlatformHeader = (): ReactElement => (
   <nav className="navbar navbar-light">
     <div className="container">

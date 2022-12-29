@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { ReactElement } from 'react';
 import React from 'react';
 
+// TODO: Complete PlatformFooter component
 export const PlatformFooter = (): ReactElement => (
   <footer>
     <div className="container">
