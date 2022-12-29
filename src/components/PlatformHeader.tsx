@@ -16,18 +16,6 @@ export const PlatformHeader = (): ReactElement => (
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" href="/article">
-            {' '}
-            <i className="ion-compose"></i>&nbsp;New Article{' '}
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" href="/settings">
-            {' '}
-            <i className="ion-gear-a"></i>&nbsp;Settings{' '}
-          </Link>
-        </li>
-        <li className="nav-item">
           <Link className="nav-link" href="/login">
             Sign in
           </Link>
