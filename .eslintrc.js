@@ -132,6 +132,12 @@ module.exports = {
       },
     },
     {
+      files: ['app/**/*'],
+      rules: {
+        '@next/next/no-css-tags': 'off',
+      },
+    },
+    {
       files: ['*.js'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
