@@ -1,6 +1,13 @@
 import type { FC } from 'react';
 
-// TODO: Update Loading state
-const Loading: FC = () => <div>Loading...</div>;
+import styles from './loading.module.css';
+
+import { LoadingSpinner } from '~/components/common/LoadingSpinner/LoadingSpinner';
+
+const Loading: FC = () => (
+  <div className={styles.root}>
+    <LoadingSpinner />
+  </div>
+);
 
 export default Loading;
