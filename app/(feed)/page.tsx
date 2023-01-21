@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
 import type { ArticlesResponse } from '~/common/types';
-import { ArticlePreview } from '~/components/home/ArticlePreview';
+import { ArticlesList } from '~/components/home/ArticlesList';
 
 // TODO: Complete data fetching
 const getArticles = async (): Promise<ArticlesResponse> => {
@@ -20,13 +20,7 @@ const GlobalFeed = async (): Promise<ReactElement> => {
   const data = await getArticles();
   const { articles } = data;
 
-  return (
-    <>
-      {articles.map((article) => (
-        <ArticlePreview article={article} key={article.slug} />
-      ))}
-    </>
-  );
+  return <ArticlesList articles={articles} />;
 };
 
 export default GlobalFeed;

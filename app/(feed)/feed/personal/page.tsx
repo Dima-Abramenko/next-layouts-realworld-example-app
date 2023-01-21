@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-// TODO: Complete YourFeed page
+// TODO: Complete YourFeed page (once authentication is added)
 const YourFeed: FC = () => (
   <>
     <div className="article-preview">
