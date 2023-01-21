@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import type { ReactElement } from 'react';
 
 import type { ArticlesResponse } from '~/common/types';
+import { ArticlePreview } from '~/components/home/ArticlePreview';
 
 // TODO: Complete data fetching
 const getArticles = async (): Promise<ArticlesResponse> => {
@@ -23,30 +23,7 @@ const GlobalFeed = async (): Promise<ReactElement> => {
   return (
     <>
       {articles.map((article) => (
-        <div className="article-preview" key={article.slug}>
-          <div className="article-meta">
-            {/* TODO: replace with Link tag */}
-            <a href="/">
-              <Image alt="user avatar" height="32" src={article.author.image} width="32" />
-            </a>
-            <div className="info">
-              {/* TODO: replace with Link tag */}
-              <a className="author" href="/">
-                {article.author.username}
-              </a>
-              <span className="date">{article.createdAt}</span>
-            </div>
-            <button className="btn btn-outline-primary btn-sm pull-xs-right" type="button">
-              <i className="ion-heart"></i> {article.favoritesCount}
-            </button>
-          </div>
-          {/* TODO: replace with Link tag */}
-          <a className="preview-link" href="/">
-            <h1>{article.title}</h1>
-            <p>{article.description}</p>
-            <span>Read more...</span>
-          </a>
-        </div>
+        <ArticlePreview article={article} key={article.slug} />
       ))}
     </>
   );
