@@ -1,37 +1,32 @@
-import type { FC } from 'react';
+import type { ReactElement } from 'react';
+
+import type { ArticlesResponse } from '~/common/types';
+import { ArticlesList } from '~/components/home/ArticlesList';
+
+// TODO: Complete data fetching
+const getArticles = async (tag: string): Promise<ArticlesResponse> => {
+  // eslint-disable-next-line compat/compat
+  const response = await fetch(`${process.env.API_BASE_URL}/articles?tag=${tag}`, {
+    cache: 'no-store',
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch feed by given tag');
+  }
+
+  return response.json();
+};
+
+type Props = {
+  params: { tag: string };
+};
 
 // TODO: Complete TagFeed page
-const TagFeed: FC = () => (
-  <>
-    <div className="article-preview">
-      <div className="article-meta">
-        {/* TODO: replace with Link tag */}
-        <a href="/">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img alt="user avatar" src="http://i.imgur.com/N4VcUeJ.jpg" />
-        </a>
-        <div className="info">
-          {/* TODO: replace with Link tag */}
-          <a className="author" href="/">
-            Don Derri
-          </a>
-          <span className="date">January 11th</span>
-        </div>
-        <button className="btn btn-outline-primary btn-sm pull-xs-right" type="button">
-          <i className="ion-heart"></i> 100
-        </button>
-      </div>
-      {/* TODO: replace with Link tag */}
-      <a className="preview-link" href="/">
-        <h1>Some very very long title</h1>
-        <p>This is the description for the post.</p>
-        <span>Read more...</span>
-        <ul className="tag-list">
-          <li className="tag-default tag-pill tag-outline ">javascript</li>
-        </ul>
-      </a>
-    </div>
-  </>
-);
+const TagFeed = async ({ params: { tag } }: Props): Promise<ReactElement> => {
+  const data = await getArticles(tag);
+  const { articles } = data;
+
+  return <ArticlesList articles={articles} />;
+};
 
 export default TagFeed;
