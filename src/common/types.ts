@@ -24,3 +24,7 @@ export type ArticlesResponse = {
   articles: Article[];
   articlesCount: number;
 };
+
+export type TagsResponse = {
+  tags: string[];
+};
