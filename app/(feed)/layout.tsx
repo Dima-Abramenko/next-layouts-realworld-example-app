@@ -9,7 +9,9 @@ import { TagsList } from '~/components/home/TagsList';
 // TODO: Complete data fetching
 const getTags = async (): Promise<TagsResponse> => {
   // eslint-disable-next-line compat/compat
-  const response = await fetch(`${process.env.API_BASE_URL}/tags`, { cache: 'no-store' });
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/tags`, {
+    cache: 'no-store',
+  });
 
   if (!response.ok) {
     throw new Error('Failed to fetch tags');

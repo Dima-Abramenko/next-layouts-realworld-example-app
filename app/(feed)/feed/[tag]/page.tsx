@@ -6,7 +6,7 @@ import { ArticlesList } from '~/components/home/ArticlesList';
 // TODO: Complete data fetching
 const getArticles = async (tag: string): Promise<ArticlesResponse> => {
   // eslint-disable-next-line compat/compat
-  const response = await fetch(`${process.env.API_BASE_URL}/articles?tag=${tag}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/articles?tag=${tag}`, {
     cache: 'no-store',
   });
 

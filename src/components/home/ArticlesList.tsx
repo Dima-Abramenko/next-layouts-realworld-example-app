@@ -19,6 +19,7 @@ export const ArticlesList = ({ articles }: Props): ReactElement => {
       {articles.map((article) => (
         <ArticlePreview article={article} key={article.slug} />
       ))}
+      {/* TODO: add articles pagination */}
     </>
   );
 };
