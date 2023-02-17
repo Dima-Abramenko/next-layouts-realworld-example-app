@@ -37,7 +37,7 @@ const getCurrentUser = async (): Promise<User | null> => {
   return currentUserResponse.user;
 };
 
-// TODO: Complete data fetching
+// TODO: Complete data fetching & issue with caching
 const getTags = async (): Promise<TagsResponse> => {
   // eslint-disable-next-line compat/compat
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/tags`, {
