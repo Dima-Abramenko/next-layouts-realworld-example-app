@@ -1,8 +1,8 @@
-import type { ReactElement } from 'react';
+import { LoadingSpinner } from '~/components/common/LoadingSpinner/LoadingSpinner';
 
 import styles from './LoadingState.module.css';
 
-import { LoadingSpinner } from '~/components/common/LoadingSpinner/LoadingSpinner';
+import type { ReactElement } from 'react';
 
 export const LoadingState = (): ReactElement => (
   <div className={styles.root}>

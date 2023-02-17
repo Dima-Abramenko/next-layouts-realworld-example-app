@@ -63,6 +63,21 @@ module.exports = {
           order: 'asc',
           caseInsensitive: false,
         },
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          ['index', 'sibling', 'parent'],
+          'type',
+          'object',
+        ],
+        pathGroups: [
+          {
+            pattern: '~/**',
+            group: 'internal',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['type'],
       },
     ],
     'import/no-default-export': 'error',
@@ -122,6 +137,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/member-ordering': ['error', { default: { order: 'alphabetically' } }],
     '@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
+    '@typescript-eslint/consistent-type-imports': 'error',
   },
   overrides: [
     {

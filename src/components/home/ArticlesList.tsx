@@ -1,7 +1,6 @@
-import type { ReactElement } from 'react';
-
 import { ArticlePreview } from './ArticlePreview';
 
+import type { ReactElement } from 'react';
 import type { Article } from '~/common/types';
 
 type Props = {

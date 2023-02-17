@@ -1,14 +1,14 @@
 'use client';
 import { Formik } from 'formik';
-import type { FormikHelpers } from 'formik';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
-import type { FormEvent, ReactElement } from 'react';
 import React, { useTransition } from 'react';
 
 import { INITIAL_USER_REGISTER_DATA } from './constants';
 import { parseAuthErrors } from './utils';
 
+import type { FormikHelpers } from 'formik';
+import type { FormEvent, ReactElement } from 'react';
 import type { UserRegister } from '~/common/types';
 
 // TODO: Complete RegisterForm component

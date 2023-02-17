@@ -1,7 +1,8 @@
 'use client';
 
-import type { FC } from 'react';
 import { useEffect } from 'react';
+
+import type { FC } from 'react';
 
 type Props = {
   error: Error;

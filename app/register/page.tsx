@@ -1,11 +1,12 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import type { ReactElement } from 'react';
 
 import { GLOBAL_FEED_ROUTE } from '~/common/constants';
-import type { User, UserResponse } from '~/common/types';
 import { RegisterForm } from '~/components/user/RegisterForm';
+
+import type { ReactElement } from 'react';
+import type { User, UserResponse } from '~/common/types';
 
 // TODO: Extract the function to shared folder
 const getCurrentUser = async (): Promise<User | null> => {

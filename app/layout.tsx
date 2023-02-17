@@ -1,10 +1,11 @@
 import { cookies } from 'next/headers';
-import type { ReactElement, ReactNode } from 'react';
 import React from 'react';
 
-import type { User, UserResponse } from '~/common/types';
 import { PlatformFooter } from '~/components/PlatformFooter';
 import { PlatformHeader } from '~/components/PlatformHeader';
+
+import type { ReactElement, ReactNode } from 'react';
+import type { User, UserResponse } from '~/common/types';
 
 type Props = {
   children: ReactNode;

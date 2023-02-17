@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import type { ReactElement } from 'react';
 import React from 'react';
+
+import { GLOBAL_FEED_ROUTE, PERSONAL_FEED_ROUTE, TAG_FEED_ROUTE } from '~/common/constants';
 
 import { getTagFromFeedPath, replaceDynamicRoute } from './utils';
 
-import { GLOBAL_FEED_ROUTE, PERSONAL_FEED_ROUTE, TAG_FEED_ROUTE } from '~/common/constants';
+import type { ReactElement } from 'react';
 
 // TODO: Complete FeedManager component
 export const FeedManager = (): ReactElement => {

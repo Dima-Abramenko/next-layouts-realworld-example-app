@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import type { ReactElement } from 'react';
 
+import type { ReactElement } from 'react';
 import type { Article } from '~/common/types';
 
 type Props = {

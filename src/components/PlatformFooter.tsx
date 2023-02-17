@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import type { ReactElement } from 'react';
 import React from 'react';
+
+import type { ReactElement } from 'react';
 
 // TODO: Complete PlatformFooter component
 export const PlatformFooter = (): ReactElement => (

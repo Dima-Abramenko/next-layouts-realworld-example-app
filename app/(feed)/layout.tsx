@@ -1,10 +1,11 @@
-import type { ReactElement, ReactNode } from 'react';
 import React from 'react';
 
-import type { TagsResponse } from '~/common/types';
 import { Banner } from '~/components/home/Banner';
 import { FeedManager } from '~/components/home/FeedManager';
 import { TagsList } from '~/components/home/TagsList';
+
+import type { ReactElement, ReactNode } from 'react';
+import type { TagsResponse } from '~/common/types';
 
 // TODO: Complete data fetching
 const getTags = async (): Promise<TagsResponse> => {

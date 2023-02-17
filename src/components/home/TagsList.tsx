@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import type { ReactElement } from 'react';
 import React from 'react';
 
 import { TAG_FEED_ROUTE } from '~/common/constants';
 import { replaceDynamicRoute } from '~/components/home/utils';
+
+import type { ReactElement } from 'react';
 
 type Props = {
   tags: string[];

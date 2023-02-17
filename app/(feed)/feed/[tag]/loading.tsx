@@ -1,6 +1,6 @@
-import type { FC } from 'react';
-
 import { LoadingState } from '~/components/home/LoadingState/LoadingState';
+
+import type { FC } from 'react';
 
 const Loading: FC = () => <LoadingState />;
 

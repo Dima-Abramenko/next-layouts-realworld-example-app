@@ -1,7 +1,7 @@
-import type { ReactElement } from 'react';
-
-import type { ArticlesResponse } from '~/common/types';
 import { ArticlesList } from '~/components/home/ArticlesList';
+
+import type { ReactElement } from 'react';
+import type { ArticlesResponse } from '~/common/types';
 
 // TODO: Complete data fetching
 const getArticles = async (): Promise<ArticlesResponse> => {
