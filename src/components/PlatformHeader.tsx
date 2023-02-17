@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
 
+import {
+  GLOBAL_FEED_ROUTE,
+  USER_LOGIN_ROUTE,
+  USER_REGISTER_ROUTE,
+  USER_SETTINGS_ROUTE,
+} from '~/common/constants';
+
 import type { ReactElement } from 'react';
 import type { User } from '~/common/types';
 
@@ -12,25 +19,25 @@ type Props = {
 export const PlatformHeader = ({ user }: Props): ReactElement => (
   <nav className="navbar navbar-light">
     <div className="container">
-      <Link className="navbar-brand" href="/">
+      <Link className="navbar-brand" href={GLOBAL_FEED_ROUTE}>
         conduit
       </Link>
       <ul className="nav navbar-nav pull-xs-right">
         <li className="nav-item">
           {/* Add "active" class when you're on that page */}
-          <Link className="nav-link active" href="/">
+          <Link className="nav-link active" href={GLOBAL_FEED_ROUTE}>
             Home
           </Link>
         </li>
         {!user && (
           <>
             <li className="nav-item">
-              <Link className="nav-link" href="/login">
+              <Link className="nav-link" href={USER_LOGIN_ROUTE}>
                 Sign in
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/register">
+              <Link className="nav-link" href={USER_REGISTER_ROUTE}>
                 Sign up
               </Link>
             </li>
@@ -45,8 +52,7 @@ export const PlatformHeader = ({ user }: Props): ReactElement => (
               </Link>
             </li>
             <li className="nav-item">
-              {/* TODO: Implement "Settings" route */}
-              <Link className="nav-link" href="/">
+              <Link className="nav-link" href={USER_SETTINGS_ROUTE}>
                 <i className="ion-gear-a"></i>&nbsp;Settings
               </Link>
             </li>

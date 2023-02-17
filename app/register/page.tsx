@@ -2,7 +2,7 @@ import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-import { GLOBAL_FEED_ROUTE } from '~/common/constants';
+import { GLOBAL_FEED_ROUTE, USER_LOGIN_ROUTE } from '~/common/constants';
 import { RegisterForm } from '~/components/user/RegisterForm';
 
 import type { ReactElement } from 'react';
@@ -51,7 +51,7 @@ const Register = async (): Promise<ReactElement> => {
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Sign up</h1>
             <p className="text-xs-center">
-              <Link href="/login">Have an account?</Link>
+              <Link href={USER_LOGIN_ROUTE}>Have an account?</Link>
             </p>
             <RegisterForm />
           </div>
