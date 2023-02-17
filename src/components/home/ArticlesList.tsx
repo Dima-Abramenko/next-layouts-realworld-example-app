@@ -8,9 +8,8 @@ type Props = {
 };
 
 export const ArticlesList = ({ articles }: Props): ReactElement => {
-  // TODO: make refactoring of empty state
   if (articles.length === 0) {
-    return <div>nothing to show</div>;
+    return <div className="article-preview">No articles are here... yet.</div>;
   }
 
   return (

@@ -14,9 +14,9 @@ export const PlatformFooter = (): ReactElement => (
       </Link>
       <span className="attribution">
         An interactive learning project from{' '}
-        <a href="https://thinkster.io" rel="noreferrer" target="_blank">
+        <Link href="https://thinkster.io" rel="noreferrer" target="_blank">
           Thinkster
-        </a>
+        </Link>
         . Code &amp; design licensed under MIT.
       </span>
     </div>

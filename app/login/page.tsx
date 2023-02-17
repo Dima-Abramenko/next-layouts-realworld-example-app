@@ -8,7 +8,7 @@ import { LoginForm } from '~/components/user/LoginForm';
 import type { ReactElement } from 'react';
 import type { User, UserResponse } from '~/common/types';
 
-// TODO: Extract the function to shared folder
+// TODO: Extract the function to shared folder & add caching
 const getCurrentUser = async (): Promise<User | null> => {
   const cookieStore = cookies();
   const userTokenCookie = cookieStore.get('auth');
