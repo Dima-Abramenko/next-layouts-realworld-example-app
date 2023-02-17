@@ -9,9 +9,13 @@ import { GLOBAL_FEED_ROUTE, PERSONAL_FEED_ROUTE, TAG_FEED_ROUTE } from '~/common
 import { getTagFromFeedPath, replaceDynamicRoute } from './utils';
 
 import type { ReactElement } from 'react';
+import type { User } from '~/common/types';
 
+type Props = {
+  user: User | null;
+};
 // TODO: Complete FeedManager component
-export const FeedManager = (): ReactElement => {
+export const FeedManager = ({ user }: Props): ReactElement => {
   const path = usePathname();
   const tag = getTagFromFeedPath(path);
 
@@ -27,15 +31,17 @@ export const FeedManager = (): ReactElement => {
             Global Feed
           </Link>
         </li>
-        <li className="nav-item">
-          {/* TODO: refactoring of tab highlighting */}
-          <Link
-            className={`nav-link ${path === PERSONAL_FEED_ROUTE && `active`}`}
-            href={PERSONAL_FEED_ROUTE}
-          >
-            Your Feed
-          </Link>
-        </li>
+        {user && (
+          <li className="nav-item">
+            {/* TODO: refactoring of tab highlighting */}
+            <Link
+              className={`nav-link ${path === PERSONAL_FEED_ROUTE && `active`}`}
+              href={PERSONAL_FEED_ROUTE}
+            >
+              Your Feed
+            </Link>
+          </li>
+        )}
         {tag && (
           <li className="nav-item">
             {/* TODO: refactoring of tab highlighting */}
