@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { GLOBAL_FEED_ROUTE, USER_LOGIN_ROUTE } from '~/common/constants';
 import { RegisterForm } from '~/components/user/RegisterForm';
 
+import type { Metadata } from 'next';
 import type { ReactElement } from 'react';
 import type { User, UserResponse } from '~/common/types';
 
@@ -34,6 +35,10 @@ const getCurrentUser = async (): Promise<User | null> => {
   const currentUserResponse: UserResponse = await response.json();
 
   return currentUserResponse.user;
+};
+
+export const metadata: Metadata = {
+  title: 'Sign up - Conduit',
 };
 
 // TODO: Complete Register page

@@ -4,6 +4,7 @@ import React from 'react';
 import { PlatformFooter } from '~/components/PlatformFooter';
 import { PlatformHeader } from '~/components/PlatformHeader';
 
+import type { Metadata } from 'next';
 import type { ReactElement, ReactNode } from 'react';
 import type { User, UserResponse } from '~/common/types';
 
@@ -37,6 +38,13 @@ const getCurrentUser = async (): Promise<User | null> => {
   const currentUserResponse: UserResponse = await response.json();
 
   return currentUserResponse.user;
+};
+
+export const metadata: Metadata = {
+  title: 'Conduit',
+  description:
+    'RealWorld app implementation powered by Next.js 13+ (Layout, Server Components and so on)',
+  viewport: { width: 'device-width', initialScale: 1 },
 };
 
 const RootLayout = async ({ children }: Props): Promise<ReactElement> => {

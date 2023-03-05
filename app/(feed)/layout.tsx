@@ -5,6 +5,7 @@ import { Banner } from '~/components/home/Banner';
 import { FeedManager } from '~/components/home/FeedManager';
 import { TagsList } from '~/components/home/TagsList';
 
+import type { Metadata } from 'next';
 import type { ReactElement, ReactNode } from 'react';
 import type { User, UserResponse } from '~/common/types';
 import type { TagsResponse } from '~/common/types';
@@ -53,6 +54,10 @@ const getTags = async (): Promise<TagsResponse> => {
 
 type Props = {
   children: ReactNode;
+};
+
+export const metadata: Metadata = {
+  title: 'Home - Conduit',
 };
 
 // TODO: Complete FeedLayout

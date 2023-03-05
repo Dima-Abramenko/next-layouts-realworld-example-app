@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { GLOBAL_FEED_ROUTE, USER_REGISTER_ROUTE } from '~/common/constants';
 import { LoginForm } from '~/components/user/LoginForm';
 
+import type { Metadata } from 'next';
 import type { ReactElement } from 'react';
 import type { User, UserResponse } from '~/common/types';
 
@@ -34,6 +35,10 @@ const getCurrentUser = async (): Promise<User | null> => {
   const currentUserResponse: UserResponse = await response.json();
 
   return currentUserResponse.user;
+};
+
+export const metadata: Metadata = {
+  title: 'Sign in - Conduit',
 };
 
 // TODO: Complete Login page
