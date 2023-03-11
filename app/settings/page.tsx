@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 // TODO: Complete Register page
-const Register = async (): Promise<ReactElement> => {
+const Settings = async (): Promise<ReactElement> => {
   const user = await getCurrentUser();
 
   if (!user) {
@@ -54,7 +54,7 @@ const Register = async (): Promise<ReactElement> => {
         <div className="row">
           <div className="col-md-6 offset-md-3 col-xs-12">
             <h1 className="text-xs-center">Your Settings</h1>
-            <SettingsForm />
+            <SettingsForm user={user} />
           </div>
         </div>
       </div>
@@ -62,4 +62,4 @@ const Register = async (): Promise<ReactElement> => {
   );
 };
 
-export default Register;
+export default Settings;

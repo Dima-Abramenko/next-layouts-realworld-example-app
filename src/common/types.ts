@@ -23,6 +23,14 @@ export type UserRegister = {
   password: string;
 };
 
+export type UserSettings = {
+  email: string;
+  password: string;
+  username: string;
+  bio: string;
+  image: string;
+};
+
 export type UserProfile = {
   username: string;
   bio: string;

@@ -2,6 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import type { FormikErrors } from 'formik';
+import type { User, UserSettings } from '~/common/types';
 
 // TODO: make refactoring of error parsing
 export const parseAuthErrors = <T>(errors: { [key: string]: string[] }): FormikErrors<T> => {
@@ -25,3 +26,11 @@ export const parseAuthErrors = <T>(errors: { [key: string]: string[] }): FormikE
 
   return parsedErrors;
 };
+
+export const mapUserDataToUserSettingsData = (user: User): UserSettings => ({
+  email: user.email,
+  password: '',
+  username: user.username,
+  bio: user.bio || '',
+  image: user.image,
+});
