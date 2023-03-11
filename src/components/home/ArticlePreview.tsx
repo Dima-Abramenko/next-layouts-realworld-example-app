@@ -1,4 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
+import { USER_PROFILE_ROUTE } from '~/common/constants';
+import { replaceDynamicRoute } from '~/common/utils';
 
 import type { ReactElement } from 'react';
 import type { Article } from '~/common/types';
@@ -14,15 +18,16 @@ export const ArticlePreview = ({ article }: Props): ReactElement => {
   return (
     <div className="article-preview" key={slug}>
       <div className="article-meta">
-        {/* TODO: replace with Link tag */}
-        <a href="/">
+        <Link href={replaceDynamicRoute(USER_PROFILE_ROUTE, 'username', author.username)}>
           <Image alt="user avatar" height="32" src={author.image} width="32" />
-        </a>
+        </Link>
         <div className="info">
-          {/* TODO: replace with Link tag */}
-          <a className="author" href="/">
+          <Link
+            className="author"
+            href={replaceDynamicRoute(USER_PROFILE_ROUTE, 'username', author.username)}
+          >
             {author.username}
-          </a>
+          </Link>
           <span className="date">{createdAt}</span>
         </div>
         <button className="btn btn-outline-primary btn-sm pull-xs-right" type="button">
