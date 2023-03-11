@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { TAG_FEED_ROUTE } from '~/common/constants';
-import { replaceDynamicRoute } from '~/components/home/utils';
+import { replaceDynamicRoute } from '~/common/utils';
 
 import type { ReactElement } from 'react';
 

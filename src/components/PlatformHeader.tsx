@@ -4,9 +4,11 @@ import React from 'react';
 import {
   GLOBAL_FEED_ROUTE,
   USER_LOGIN_ROUTE,
+  USER_PROFILE_ROUTE,
   USER_REGISTER_ROUTE,
   USER_SETTINGS_ROUTE,
 } from '~/common/constants';
+import { replaceDynamicRoute } from '~/common/utils';
 
 import type { ReactElement } from 'react';
 import type { User } from '~/common/types';
@@ -57,8 +59,10 @@ export const PlatformHeader = ({ user }: Props): ReactElement => (
               </Link>
             </li>
             <li className="nav-item">
-              {/* TODO: Implement "User Profile" route */}
-              <Link className="nav-link" href="/">
+              <Link
+                className="nav-link"
+                href={replaceDynamicRoute(USER_PROFILE_ROUTE, 'username', user.username)}
+              >
                 {/* TODO: Replace with Next Image component */}
                 <img alt="current user profile image" className="user-pic" src={user.image} />
                 {user.username}

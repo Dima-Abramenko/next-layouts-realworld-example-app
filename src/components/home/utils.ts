@@ -16,7 +16,3 @@ export const getTagFromFeedPath = (path: string | null): string | null => {
 
   return tag;
 };
-
-// TODO: Complete replaceDynamicRoute helper function
-export const replaceDynamicRoute = (route: string, slug: string, dynamicValue: string): string =>
-  route.replace(`[${slug}]`, dynamicValue);

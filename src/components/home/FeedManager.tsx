@@ -5,8 +5,9 @@ import { usePathname } from 'next/navigation';
 import React from 'react';
 
 import { GLOBAL_FEED_ROUTE, PERSONAL_FEED_ROUTE, TAG_FEED_ROUTE } from '~/common/constants';
+import { replaceDynamicRoute } from '~/common/utils';
 
-import { getTagFromFeedPath, replaceDynamicRoute } from './utils';
+import { getTagFromFeedPath } from './utils';
 
 import type { ReactElement } from 'react';
 import type { User } from '~/common/types';
