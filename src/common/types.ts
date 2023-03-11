@@ -38,6 +38,10 @@ export type UserProfile = {
   following: boolean;
 };
 
+export type UserProfileResponse = {
+  profile: UserProfile;
+};
+
 export type Article = {
   slug: string;
   title: string;

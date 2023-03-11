@@ -59,6 +59,7 @@ export const PlatformHeader = ({ user }: Props): ReactElement => (
               </Link>
             </li>
             <li className="nav-item">
+              {/* TODO: encode URL parameters for User Profile */}
               <Link
                 className="nav-link"
                 href={replaceDynamicRoute(USER_PROFILE_ROUTE, 'username', user.username)}
