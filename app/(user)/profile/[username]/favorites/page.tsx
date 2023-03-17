@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 
 // TODO: Complete UserProfileFavoritesPage
-const UserProfilePage = async (): Promise<ReactElement> => (
+const UserProfileFavoritesPage = async (): Promise<ReactElement> => (
   <>
     <div className="article-preview">
       <div className="article-meta">
@@ -12,7 +12,7 @@ const UserProfilePage = async (): Promise<ReactElement> => (
         <div className="info">
           {/* TODO: Replace with Next.js Link */}
           <a className="author" href="/">
-            Eric Simons
+            Erica Simons
           </a>
           <span className="date">January 20th</span>
         </div>
@@ -58,4 +58,4 @@ const UserProfilePage = async (): Promise<ReactElement> => (
   </>
 );
 
-export default UserProfilePage;
+export default UserProfileFavoritesPage;
