@@ -1,11 +1,15 @@
+import { EditProfileLink } from '~/components/user/EditProfileLink';
+import { FollowUserButton } from '~/components/user/FollowUserButton';
+
 import type { ReactElement } from 'react';
 import type { UserProfile } from '~/common/types';
 
 type Props = {
+  isProfileBelongsToUser: boolean;
   userProfile: UserProfile;
 };
 
-export const UserInfo = ({ userProfile }: Props): ReactElement => {
+export const UserInfo = ({ isProfileBelongsToUser, userProfile }: Props): ReactElement => {
   const { username, image, bio } = userProfile;
 
   return (
@@ -17,11 +21,11 @@ export const UserInfo = ({ userProfile }: Props): ReactElement => {
             <img alt="user profile image" className="user-img" src={image} />
             <h4>{username}</h4>
             {bio && <p>{bio}</p>}
-            {/* TODO: Implement follow feature */}
-            <button className="btn btn-sm btn-outline-secondary action-btn" type="button">
-              <i className="ion-plus-round"></i>
-              &nbsp; Follow {username}
-            </button>
+            {isProfileBelongsToUser ? (
+              <EditProfileLink />
+            ) : (
+              <FollowUserButton userProfile={userProfile} />
+            )}
           </div>
         </div>
       </div>
