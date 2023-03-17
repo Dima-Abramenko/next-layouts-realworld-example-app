@@ -1,61 +1,36 @@
+// TODO: Think about refactoring of articles components
+import { ArticlesList } from '~/components/home/ArticlesList';
+
 import type { ReactElement } from 'react';
+import type { ArticlesResponse } from '~/common/types';
+
+// TODO: Complete data fetching
+const getUserArticles = async (username: string): Promise<ArticlesResponse> => {
+  // eslint-disable-next-line compat/compat
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/articles?author=${username}`,
+    {
+      cache: 'no-store',
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch feed by given tag');
+  }
+
+  return response.json();
+};
+
+type Props = {
+  params: { username: string };
+};
 
 // TODO: Complete UserProfileFavoritesPage
-const UserProfilePage = async (): Promise<ReactElement> => (
-  <>
-    <div className="article-preview">
-      <div className="article-meta">
-        {/* TODO: Replace with Next.js Link */}
-        <a href="/">
-          <img src="http://i.imgur.com/Qr71crq.jpg" />
-        </a>
-        <div className="info">
-          {/* TODO: Replace with Next.js Link */}
-          <a className="author" href="/">
-            Eric Simons
-          </a>
-          <span className="date">January 20th</span>
-        </div>
-        <button className="btn btn-outline-primary btn-sm pull-xs-right" type="button">
-          <i className="ion-heart"></i> 29
-        </button>
-      </div>
-      {/* TODO: Replace with Next.js Link */}
-      <a className="preview-link" href="/">
-        <h1>How to build webapps that scale</h1>
-        <p>This is the description for the post.</p>
-        <span>Read more...</span>
-      </a>
-    </div>
-    <div className="article-preview">
-      <div className="article-meta">
-        {/* TODO: Replace with Next.js Link */}
-        <a href="/">
-          <img src="http://i.imgur.com/N4VcUeJ.jpg" />
-        </a>
-        <div className="info">
-          {/* TODO: Replace with Next.js Link */}
-          <a className="author" href="/">
-            Albert Pai
-          </a>
-          <span className="date">January 20th</span>
-        </div>
-        <button className="btn btn-outline-primary btn-sm pull-xs-right" type="button">
-          <i className="ion-heart"></i> 32
-        </button>
-      </div>
-      {/* TODO: Replace with Next.js Link */}
-      <a className="preview-link" href="/">
-        <h1>The song you won&apos;t ever stop singing. No matter how hard you try.</h1>
-        <p>This is the description for the post.</p>
-        <span>Read more...</span>
-        <ul className="tag-list">
-          <li className="tag-default tag-pill tag-outline">Music</li>
-          <li className="tag-default tag-pill tag-outline">Song</li>
-        </ul>
-      </a>
-    </div>
-  </>
-);
+const UserProfilePage = async ({ params: { username } }: Props): Promise<ReactElement> => {
+  const data = await getUserArticles(username);
+  const { articles } = data;
+
+  return <ArticlesList articles={articles} />;
+};
 
 export default UserProfilePage;
